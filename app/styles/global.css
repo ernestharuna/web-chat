@@ -1,0 +1,28 @@
+* {
+    scroll-behavior: smooth;
+    --webkit-scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+    width: 0.35rem;
+    height: 0.35rem;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ebebeb;
+    margin: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 0;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #8d6000;
+}
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

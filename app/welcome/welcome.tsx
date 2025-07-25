@@ -1,22 +1,12 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+import { Link } from "react-router";
 
 export function Welcome() {
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
-      <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
+      <div className="flex-1 flex flex-col items-center justify-center gap-16 min-h-0">
         <header className="flex flex-col items-center gap-9">
-          <div className="w-[500px] max-w-[100vw] p-4">
-            <img
-              src={logoLight}
-              alt="React Router"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src={logoDark}
-              alt="React Router"
-              className="hidden w-full dark:block"
-            />
+          <div className="p-4">
+            <h1 className="text-center text-3xl font-bold tracking-tighter text-gray-700">Web Chat</h1>
           </div>
         </header>
         <div className="max-w-[300px] w-full space-y-6 px-4">
@@ -27,15 +17,13 @@ export function Welcome() {
             <ul>
               {resources.map(({ href, text, icon }) => (
                 <li key={href}>
-                  <a
+                  <Link
                     className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
+                    to={href}
                   >
                     {icon}
                     {text}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -48,8 +36,8 @@ export function Welcome() {
 
 const resources = [
   {
-    href: "https://reactrouter.com/docs",
-    text: "React Router Docs",
+    href: "/register",
+    text: "Register Account",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +56,8 @@ const resources = [
     ),
   },
   {
-    href: "https://rmx.as/discord",
-    text: "Join Discord",
+    href: "/login",
+    text: "Account Login",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
