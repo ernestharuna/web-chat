@@ -10,6 +10,8 @@ import {
 import type { Route } from "./+types/root";
 import "./styles/app.css";
 import "./styles/global.css";
+import ProgressBar from "./components/navigation/progress-bar";
+import { Toaster } from "sonner";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -37,6 +39,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <ProgressBar />
+        <Toaster
+          richColors
+          closeButton
+          position="top-right"
+          toastOptions={{
+            classNames: {
+              actionButton: '!px-2 !rounded-full !text-white',
+            },
+          }}
+        />
       </body>
     </html>
   );
